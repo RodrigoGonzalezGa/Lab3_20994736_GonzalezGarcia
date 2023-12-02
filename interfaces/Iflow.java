@@ -1,7 +1,8 @@
 package interfaces;
-import Lab3java.Option.java;
-
+import Clases.Option;
+import java.util.List;
 public interface Iflow {
     int getid();
     String getnamemsg();
+    List<Option> getoptions();
 }

@@ -1,5 +1,8 @@
+package Clases;
+
 import interfaces.Ioption;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Option implements Ioption {
@@ -8,12 +11,12 @@ public class Option implements Ioption {
     public int chtlink;
     public int flowlink;
     public List<String> keywords;
-    public Option(int id,String msg,int chtlink,int flowlink,List<String> keywords){
+    public Option(int id,String msg,int chtlink,int flowlink,String... keywords){
         this.id=id;
         this.msg=msg;
         this.chtlink=chtlink;
         this.flowlink=flowlink;
-        this.keywords=keywords;
+        this.keywords= List.of(keywords);
     }
 
 
