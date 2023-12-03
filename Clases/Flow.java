@@ -1,18 +1,27 @@
 package Clases;
 import interfaces.Iflow;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Flow implements Iflow {
+public class Flow implements Iflow{
     public int id;
     public String nombremsg;
     public List<Option> optionlist;
     public Flow(int id, String msg, Option... oplist){
         this.id=id;
         this.nombremsg=msg;
-        this.optionlist=List.of(oplist);
+        this.optionlist=new ArrayList<Option>();
+        for(Option op: oplist){
+            if(!this.optionlist.contains(op)){
+                this.optionlist.add(op);
+            }
+        }
+        this.optionlist=new  ArrayList<Option>(List.of(oplist));
     }
     @Override
     public int getid(){
+
         return this.id;
     }
     @Override
@@ -20,14 +29,15 @@ public class Flow implements Iflow {
         return this.nombremsg;
     }
     @Override
-    public List<Option> getoptions(){
+    public List<Option> getoptions() {
         return this.optionlist;
     }
+    @Override
     public void flowAddOption(Option... opl){
-        for (Option op: opl) {
-            if(this.optionlist.contains(op)) {
-                this.optionlist.add(op);
+            for (Option op: opl) {
+                if(!this.optionlist.contains(op)) {
+                    this.optionlist.add(op);
+                }
             }
-        }
     }
 }

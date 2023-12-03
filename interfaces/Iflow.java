@@ -5,4 +5,5 @@ public interface Iflow {
     int getid();
     String getnamemsg();
     List<Option> getoptions();
+    void flowAddOption(Option... opl);
 }
