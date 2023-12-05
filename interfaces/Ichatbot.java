@@ -10,5 +10,7 @@ public interface Ichatbot {
     int getinitialflow();
     List<Flow> getflows();
     void chatbotAddFlow(Flow... flowlist);
+    void resetchatbot();
+    void setflowactual(int flid);
 
 }

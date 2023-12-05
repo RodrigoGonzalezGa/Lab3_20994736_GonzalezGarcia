@@ -56,5 +56,13 @@ public class Chatbot implements Ichatbot {
             }
         }
     }
+    @Override
+    public void resetchatbot(){
+        this.flowid=this.initialflow;
+    }
+    @Override
+    public void setflowactual(int flid){
+        this.flowid=flid;
+    }
 
 }
