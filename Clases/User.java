@@ -5,6 +5,7 @@ import interfaces.Iuser;
 public class User implements Iuser {
     public String name;
     public String history;
+    public boolean isadmin=false;
     public User(String name){
         super();
         this.name=name;
