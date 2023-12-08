@@ -11,7 +11,7 @@ public interface Isystem {
     List<User> getuserlist();
     int getinitialcht();
     void systemAddChatbot(Chatbot... cht);
-    void systemAddUser(User user);
+    void systemAddUser(String newuser);
     void systemLogin(User user);
     void systemLogout();
 

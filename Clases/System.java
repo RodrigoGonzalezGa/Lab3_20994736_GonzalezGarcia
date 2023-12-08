@@ -57,9 +57,14 @@ public class System implements Isystem {
         }
     }
     @Override
-    public void systemAddUser(User user){
-        if(!this.userlist.contains(user)){
-            this.userlist.add(user);
+    public void systemAddUser(String newuser){
+        for(User userinlist:this.userlist){
+            if(userinlist.name.equals(newuser)){
+                return;
+            }
+            else{
+                
+            }
         }
     }
     @Override
