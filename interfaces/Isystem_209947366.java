@@ -3,7 +3,7 @@ import Clases.*;
 
 import java.util.List;
 
-public interface Isystem {
+public interface Isystem_209947366 {
     String systemgetname();
     int systemgetchtact();
     List<Chatbot> getchatbotlist();
@@ -11,9 +11,12 @@ public interface Isystem {
     List<User> getuserlist();
     int getinitialcht();
     void systemAddChatbot(Chatbot... cht);
-    void systemAddUser(String newuser);
+    void systemAddUser(User newuser);
     void systemLogin(User user);
     void systemLogout();
+    void systemtalk(String msg);
+    void systemsynthesis(User user);
+
 
 
 

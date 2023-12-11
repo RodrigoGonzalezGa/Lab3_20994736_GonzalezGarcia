@@ -5,11 +5,13 @@ import interfaces.Iuser;
 public class User implements Iuser {
     public String name;
     public String history;
-    public boolean isadmin=false;
+    public boolean isadmin;
+
     public User(String name){
         super();
         this.name=name;
         this.history="";
+        this.isadmin=false;
     }
     @Override
     public String getname(){

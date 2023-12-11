@@ -2,6 +2,7 @@ package Clases;
 
 import interfaces.Ioption;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Option implements Ioption {
@@ -15,7 +16,10 @@ public class Option implements Ioption {
         this.msg=msg;
         this.chtlink=chtlink;
         this.flowlink=flowlink;
-        this.keywords= List.of(keywords);
+        this.keywords= new ArrayList<>();
+        for(String key:keywords){
+            this.keywords.add(key.toLowerCase());
+        }
     }
 
 

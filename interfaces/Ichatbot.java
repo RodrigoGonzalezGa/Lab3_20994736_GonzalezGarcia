@@ -9,6 +9,7 @@ public interface Ichatbot {
     int getflowid();
     int getinitialflow();
     List<Flow> getflows();
+    boolean checkidrepeat(Flow fl);
     void chatbotAddFlow(Flow... flowlist);
     void resetchatbot();
     void setflowactual(int flid);

@@ -6,4 +6,5 @@ public interface Iflow {
     String getnamemsg();
     List<Option> getoptions();
     void flowAddOption(Option... opl);
+    boolean checkidrepeat(Option op);
 }

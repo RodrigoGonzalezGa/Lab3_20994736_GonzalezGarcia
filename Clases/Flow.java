@@ -34,10 +34,20 @@ public class Flow implements Iflow{
     }
     @Override
     public void flowAddOption(Option... opl){
-            for (Option op: opl) {
-                if(!this.optionlist.contains(op)) {
+            for(Option op: opl){
+                if(!(this.checkidrepeat(op))){
                     this.optionlist.add(op);
                 }
             }
     }
+    @Override
+    public boolean checkidrepeat(Option op){
+        for(Option opfromlist: this.optionlist){
+            if(op.id==opfromlist.id){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

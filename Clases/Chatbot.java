@@ -49,9 +49,18 @@ public class Chatbot implements Ichatbot {
         return this.flowlist;
     }
     @Override
+    public boolean checkidrepeat(Flow fl){
+        for(Flow flowfromlist:this.flowlist){
+            if(fl.id==flowfromlist.id){
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
     public void chatbotAddFlow(Flow... flowlist){
         for (Flow fl: flowlist){
-            if(!this.flowlist.contains(fl)){
+            if(!this.checkidrepeat(fl)){
                 this.flowlist.add(fl);
             }
         }
