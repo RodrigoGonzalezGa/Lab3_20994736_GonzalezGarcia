@@ -1,0 +1,9 @@
+Ambiente:
+Sistema operativo: Windows 10
+OpenJDK Runtime Environment Temurin-11.0.21+9 (build 11.0.21+9)
+OpenJDK Client VM Temurin-11.0.21+9 (build 11.0.21+9, mixed mode)
+Se utiliza javac para compilar
+Abriendo el cmd desde la carpeta donde se ubica el Main se utiliza el comando:
+javac Main.java
+y para ejecutar:
+Java Main

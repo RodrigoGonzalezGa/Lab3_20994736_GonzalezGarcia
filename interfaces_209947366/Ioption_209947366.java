@@ -1,8 +1,8 @@
-package interfaces;
+package interfaces_209947366;
 
 import java.util.List;
 
-public interface Ioption {
+public interface Ioption_209947366 {
     /* getter id */
     int getid();
     String getmsg();
