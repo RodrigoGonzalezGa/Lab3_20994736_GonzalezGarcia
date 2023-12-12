@@ -1,5 +1,5 @@
-package Clases_209947366;
-import interfaces_209947366.Isystem_209947366;
+package Clases_209947366_GonzalezGarcia;
+import interfaces_209947366_GonzalezGarcia.Isystem_209947366_GonzalezGarcia;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.format.DateTimeFormatter;
@@ -8,7 +8,7 @@ import java.time.*;
 /**
  * Clase que representa el sistema que almacena los chatbot
  */
-public class System_209947366 implements Isystem_209947366 {
+public class System_209947366_GonzalezGarcia implements Isystem_209947366_GonzalezGarcia {
     /**
      * nombre del sistema
      */
@@ -20,15 +20,15 @@ public class System_209947366 implements Isystem_209947366 {
     /**
      * Usuario que tiene sesion iniciada (inicialmente ninguno)
      */
-    public User_209947366 activeuser=null;
+    public User_209947366_GonzalezGarcia activeuser=null;
     /**
      * Lista de Usuarios y Administradores
      */
-    public List<User_209947366> userlist;
+    public List<User_209947366_GonzalezGarcia> userlist;
     /**
      * Lista de Chatbots del Sistema
      */
-    public List<Chatbot_209947366> chatbotlist;
+    public List<Chatbot_209947366_GonzalezGarcia> chatbotlist;
     /**
      * Id del Chatbot inicial
      */
@@ -48,17 +48,17 @@ public class System_209947366 implements Isystem_209947366 {
      * @param chtact Int: ID del Chatbot inicial
      * @param chtlist List Chatbot: Lista de Chatbots
      */
-    public System_209947366(String name, int chtact, Chatbot_209947366... chtlist){
+    public System_209947366_GonzalezGarcia(String name, int chtact, Chatbot_209947366_GonzalezGarcia... chtlist){
         this.name=name;
         this.chtact=chtact;
         this.initialcht=chtact;
-        this.chatbotlist=new ArrayList<Chatbot_209947366>();
-        for(Chatbot_209947366 cht: chtlist){
+        this.chatbotlist=new ArrayList<Chatbot_209947366_GonzalezGarcia>();
+        for(Chatbot_209947366_GonzalezGarcia cht: chtlist){
             if(!checkrepeatid(cht)){
                 this.chatbotlist.add(cht);
             }
         }
-        this.userlist=new ArrayList<User_209947366>();
+        this.userlist=new ArrayList<User_209947366_GonzalezGarcia>();
 
 
     }
@@ -86,7 +86,7 @@ public class System_209947366 implements Isystem_209947366 {
      * @return List Chatbot: Lista de Chatbot
      */
     @Override
-    public List<Chatbot_209947366> getchatbotlist(){
+    public List<Chatbot_209947366_GonzalezGarcia> getchatbotlist(){
         return this.chatbotlist;
     }
 
@@ -95,7 +95,7 @@ public class System_209947366 implements Isystem_209947366 {
      * @return User: Usuario activo
      */
     @Override
-    public User_209947366 getactiveuser(){
+    public User_209947366_GonzalezGarcia getactiveuser(){
         return this.activeuser;
     }
 
@@ -104,7 +104,7 @@ public class System_209947366 implements Isystem_209947366 {
      * @return List User: Lista de usuarios
      */
     @Override
-    public List<User_209947366> getuserlist(){
+    public List<User_209947366_GonzalezGarcia> getuserlist(){
         return this.userlist;
     }
 
@@ -122,8 +122,8 @@ public class System_209947366 implements Isystem_209947366 {
      * @param chtl Chatbot: Chatbtos a añadir
      */
     @Override
-    public void systemAddChatbot(Chatbot_209947366... chtl){
-        for (Chatbot_209947366 cht: chtl){
+    public void systemAddChatbot(Chatbot_209947366_GonzalezGarcia... chtl){
+        for (Chatbot_209947366_GonzalezGarcia cht: chtl){
             if(!checkrepeatid(cht)){
                 this.chatbotlist.add(cht);
             }
@@ -135,8 +135,8 @@ public class System_209947366 implements Isystem_209947366 {
      * @param newuser User: Usuario a añadir
      */
     @Override
-    public void systemAddUser(User_209947366 newuser){
-        for(User_209947366 userinlist:this.userlist){
+    public void systemAddUser(User_209947366_GonzalezGarcia newuser){
+        for(User_209947366_GonzalezGarcia userinlist:this.userlist){
             if(userinlist.name.equals(newuser.name)){
                 return;
             }
@@ -149,7 +149,7 @@ public class System_209947366 implements Isystem_209947366 {
      * @param user User
      */
     @Override
-    public void systemLogin(User_209947366 user){
+    public void systemLogin(User_209947366_GonzalezGarcia user){
         if(this.activeuser==null && !this.userlist.isEmpty()  && this.userlist.contains(user)){
         this.activeuser=user;
         }
@@ -162,7 +162,7 @@ public class System_209947366 implements Isystem_209947366 {
     @Override
     public void systemLogout(){
         this.chtact=this.initialcht;
-        for(Chatbot_209947366 cht:this.chatbotlist){
+        for(Chatbot_209947366_GonzalezGarcia cht:this.chatbotlist){
             cht.resetchatbot();
         }
         this.activeuser=null;
@@ -173,8 +173,8 @@ public class System_209947366 implements Isystem_209947366 {
      * @param cht Chatbot: Chatbot que se quiere añadir
      * @return Booleano que indica la presencia del id
      */
-    public boolean checkrepeatid(Chatbot_209947366 cht){
-        for(Chatbot_209947366 chtfromlist:this.chatbotlist){
+    public boolean checkrepeatid(Chatbot_209947366_GonzalezGarcia cht){
+        for(Chatbot_209947366_GonzalezGarcia chtfromlist:this.chatbotlist){
             if(chtfromlist.id==cht.id){
                 return true;
             }
@@ -194,22 +194,22 @@ public class System_209947366 implements Isystem_209947366 {
         fecha = LocalDateTime.now();
         String fechaformateada = fecha.format(formatofecha);
         this.activeuser.appendhistory(fechaformateada + " - " + this.activeuser.getname() + ":" + msg + "\n");
-        for (Chatbot_209947366 cht : this.chatbotlist) {
+        for (Chatbot_209947366_GonzalezGarcia cht : this.chatbotlist) {
             if (cht.id == this.chtact) {
-                for (Flow_209947366 fl : cht.flowlist) {
+                for (Flow_209947366_GonzalezGarcia fl : cht.flowlist) {
                     if (fl.id == cht.flowid) {
-                        for (Option_209947366 op : fl.optionlist) {
+                        for (Option_209947366_GonzalezGarcia op : fl.optionlist) {
                             String opidasstring= Integer.toString(op.id);
                             if (op.keywords.contains(msg.toLowerCase())) {
                                 this.chtact = op.chtlink;
                                 cht.flowid = op.flowlink;
-                                for (Chatbot_209947366 chatbottoadd : this.chatbotlist) {
+                                for (Chatbot_209947366_GonzalezGarcia chatbottoadd : this.chatbotlist) {
                                     if (chatbottoadd.id == this.chtact) {
-                                        for (Flow_209947366 flowtoadd : chatbottoadd.flowlist) {
+                                        for (Flow_209947366_GonzalezGarcia flowtoadd : chatbottoadd.flowlist) {
                                             if (flowtoadd.id == chatbottoadd.id) {
                                                 this.activeuser.appendhistory(fechaformateada + " - " + chatbottoadd.name
                                                         + ":" + flowtoadd.nombremsg + "\n");
-                                                for (Option_209947366 optoadd : fl.optionlist) {
+                                                for (Option_209947366_GonzalezGarcia optoadd : fl.optionlist) {
                                                     this.activeuser.appendhistory(optoadd.msg + "\n");
                                                 }
                                                 return;
@@ -222,13 +222,13 @@ public class System_209947366 implements Isystem_209947366 {
                             else if(opidasstring.equals(msg)){
                                 this.chtact = op.chtlink;
                                 cht.flowid = op.flowlink;
-                                for (Chatbot_209947366 chatbottoadd : this.chatbotlist) {
+                                for (Chatbot_209947366_GonzalezGarcia chatbottoadd : this.chatbotlist) {
                                     if (chatbottoadd.id == this.chtact) {
-                                        for (Flow_209947366 flowtoadd : chatbottoadd.flowlist) {
+                                        for (Flow_209947366_GonzalezGarcia flowtoadd : chatbottoadd.flowlist) {
                                             if (flowtoadd.id == chatbottoadd.flowid) {
                                                 this.activeuser.appendhistory(fechaformateada + " - " + chatbottoadd.name
                                                         + ":" + flowtoadd.nombremsg + "\n");
-                                                for (Option_209947366 optoadd : fl.optionlist) {
+                                                for (Option_209947366_GonzalezGarcia optoadd : fl.optionlist) {
                                                     this.activeuser.appendhistory(optoadd.msg + "\n");
                                                 }
                                                 return;
@@ -239,13 +239,13 @@ public class System_209947366 implements Isystem_209947366 {
                                 }
                             }
                             else{
-                                for (Chatbot_209947366 chatbottoadd : this.chatbotlist) {
+                                for (Chatbot_209947366_GonzalezGarcia chatbottoadd : this.chatbotlist) {
                                     if (chatbottoadd.id == this.chtact) {
-                                        for (Flow_209947366 flowtoadd : chatbottoadd.flowlist) {
+                                        for (Flow_209947366_GonzalezGarcia flowtoadd : chatbottoadd.flowlist) {
                                             if (flowtoadd.id == chatbottoadd.flowid) {
                                                 this.activeuser.appendhistory(fechaformateada + " - " + chatbottoadd.name
                                                         + ":" + flowtoadd.nombremsg + "\n");
-                                                for (Option_209947366 optoadd : fl.optionlist) {
+                                                for (Option_209947366_GonzalezGarcia optoadd : fl.optionlist) {
                                                     this.activeuser.appendhistory(optoadd.msg + "\n");
                                                 }
                                                 return;
@@ -260,7 +260,7 @@ public class System_209947366 implements Isystem_209947366 {
                         //añadir chatbot actual al historial
                         this.activeuser.appendhistory(fechaformateada + " - " + cht.name
                                 + ":" + fl.nombremsg + "\n");
-                        for (Option_209947366 optoadd : fl.optionlist) {
+                        for (Option_209947366_GonzalezGarcia optoadd : fl.optionlist) {
                             this.activeuser.appendhistory(optoadd.msg + "\n");
                         }
                         return;
@@ -275,7 +275,7 @@ public class System_209947366 implements Isystem_209947366 {
      * @param user User: Usuario al cual se le vera el historial
      */
     @Override
-    public void systemsynthesis(User_209947366 user){
+    public void systemsynthesis(User_209947366_GonzalezGarcia user){
         java.lang.System.out.println(user.history);
     }
     }

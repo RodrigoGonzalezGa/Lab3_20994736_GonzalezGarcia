@@ -1,6 +1,6 @@
-package Clases_209947366;
+package Clases_209947366_GonzalezGarcia;
 
-import interfaces_209947366.Ioption_209947366;
+import interfaces_209947366_GonzalezGarcia.Ioption_209947366_GonzalezGarcia;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Clase que representa las opciones de un flujo de las interacciones
  */
-public class Option_209947366 implements Ioption_209947366 {
+public class Option_209947366_GonzalezGarcia implements Ioption_209947366_GonzalezGarcia {
     /**
      * Identificador del Option
      */
@@ -38,7 +38,7 @@ public class Option_209947366 implements Ioption_209947366 {
      * @param flowlink Int: Indica el Flow del Chatbot a utilizar en la siguiente interaccion
      * @param keywords List String: Palabras que se pueden utilizar para interactuar con el Chatbot
      */
-    public Option_209947366(int id, String msg, int chtlink, int flowlink, String... keywords){
+    public Option_209947366_GonzalezGarcia(int id, String msg, int chtlink, int flowlink, String... keywords){
         this.id=id;
         this.msg=msg;
         this.chtlink=chtlink;

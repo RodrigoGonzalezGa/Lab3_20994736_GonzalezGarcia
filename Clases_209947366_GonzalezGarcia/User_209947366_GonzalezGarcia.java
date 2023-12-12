@@ -1,11 +1,11 @@
-package Clases_209947366;
+package Clases_209947366_GonzalezGarcia;
 
-import interfaces_209947366.Iuser_209947366;
+import interfaces_209947366_GonzalezGarcia.Iuser_209947366_GonzalezGarcia;
 
 /**
  * Clase que representa a un usuario normal
  */
-public class User_209947366 implements Iuser_209947366 {
+public class User_209947366_GonzalezGarcia implements Iuser_209947366_GonzalezGarcia {
     /**
      * Nombre de usuario
      */
@@ -23,7 +23,7 @@ public class User_209947366 implements Iuser_209947366 {
      * Constructor de la clase User
      * @param name String: Nombre de usuario
      */
-    public User_209947366(String name){
+    public User_209947366_GonzalezGarcia(String name){
         super();
         this.name=name;
         this.history="";

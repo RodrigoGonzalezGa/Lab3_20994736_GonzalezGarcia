@@ -1,5 +1,5 @@
-package Clases_209947366;
-import interfaces_209947366.Iflow_209947366;
+package Clases_209947366_GonzalezGarcia;
+import interfaces_209947366_GonzalezGarcia.Iflow_209947366_GonzalezGarcia;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Flujo de interacciones entre el usuario y el Chatbot
  */
-public class Flow_209947366 implements Iflow_209947366 {
+public class Flow_209947366_GonzalezGarcia implements Iflow_209947366_GonzalezGarcia {
     /**
      * Identificador del Flow
      */
@@ -19,7 +19,7 @@ public class Flow_209947366 implements Iflow_209947366 {
     /**
      * Lista de opciones del Flujo
      */
-    public List<Option_209947366> optionlist;
+    public List<Option_209947366_GonzalezGarcia> optionlist;
 
     /**
      * Constructor de la clase Flow
@@ -27,16 +27,16 @@ public class Flow_209947366 implements Iflow_209947366 {
      * @param msg String: Nombre y mensaje del Flujo
      * @param oplist String... Lista de opciones del Flujo
      */
-    public Flow_209947366(int id, String msg, Option_209947366... oplist){
+    public Flow_209947366_GonzalezGarcia(int id, String msg, Option_209947366_GonzalezGarcia... oplist){
         this.id=id;
         this.nombremsg=msg;
-        this.optionlist=new ArrayList<Option_209947366>();
-        for(Option_209947366 op: oplist){
+        this.optionlist=new ArrayList<Option_209947366_GonzalezGarcia>();
+        for(Option_209947366_GonzalezGarcia op: oplist){
             if(checkidrepeat(op)){
                 this.optionlist.add(op);
             }
         }
-        this.optionlist=new  ArrayList<Option_209947366>(List.of(oplist));
+        this.optionlist=new  ArrayList<Option_209947366_GonzalezGarcia>(List.of(oplist));
     }
 
     /**
@@ -63,7 +63,7 @@ public class Flow_209947366 implements Iflow_209947366 {
      * @return List Option: Lista de options
      */
     @Override
-    public List<Option_209947366> getoptions() {
+    public List<Option_209947366_GonzalezGarcia> getoptions() {
         return this.optionlist;
     }
 
@@ -72,8 +72,8 @@ public class Flow_209947366 implements Iflow_209947366 {
      * @param opl Option: Options a añadir
      */
     @Override
-    public void flowAddOption(Option_209947366... opl){
-            for(Option_209947366 op: opl){
+    public void flowAddOption(Option_209947366_GonzalezGarcia... opl){
+            for(Option_209947366_GonzalezGarcia op: opl){
                 if(!(this.checkidrepeat(op))){
                     this.optionlist.add(op);
                 }
@@ -86,8 +86,8 @@ public class Flow_209947366 implements Iflow_209947366 {
      * @return Boolean
      */
     @Override
-    public boolean checkidrepeat(Option_209947366 op){
-        for(Option_209947366 opfromlist: this.optionlist){
+    public boolean checkidrepeat(Option_209947366_GonzalezGarcia op){
+        for(Option_209947366_GonzalezGarcia opfromlist: this.optionlist){
             if(op.id==opfromlist.id){
                 return true;
             }

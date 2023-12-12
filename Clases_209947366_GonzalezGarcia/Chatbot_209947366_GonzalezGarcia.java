@@ -1,13 +1,13 @@
-package Clases_209947366;
+package Clases_209947366_GonzalezGarcia;
 
-import interfaces_209947366.Ichatbot_209947366;
+import interfaces_209947366_GonzalezGarcia.Ichatbot_209947366_GonzalezGarcia;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Clase que representa a los Chatbots con los cuales se puede interactuar
  */
-public class Chatbot_209947366 implements Ichatbot_209947366 {
+public class Chatbot_209947366_GonzalezGarcia implements Ichatbot_209947366_GonzalezGarcia {
     /**
      * Int: Identificador del Chatbot
      */
@@ -31,7 +31,7 @@ public class Chatbot_209947366 implements Ichatbot_209947366 {
     /**
      * List Flow: Lista de Flows de un Chatbot
      */
-    public List<Flow_209947366> flowlist;
+    public List<Flow_209947366_GonzalezGarcia> flowlist;
 
     /**
      * Contsructor de la clae Chatbot
@@ -41,14 +41,14 @@ public class Chatbot_209947366 implements Ichatbot_209947366 {
      * @param flowid Int: ID del Flow inicial del Chatbot
      * @param fl List Flow: Lista de Flows de un Chatbot
      */
-    public Chatbot_209947366(int id, String name, String msg, int flowid, Flow_209947366... fl){
+    public Chatbot_209947366_GonzalezGarcia(int id, String name, String msg, int flowid, Flow_209947366_GonzalezGarcia... fl){
         this.id=id;
         this.name=name;
         this.msg=msg;
         this.flowid=flowid;
         this.initialflow=flowid;
-        this.flowlist=new ArrayList<Flow_209947366>();
-        for(Flow_209947366 flow: fl){
+        this.flowlist=new ArrayList<Flow_209947366_GonzalezGarcia>();
+        for(Flow_209947366_GonzalezGarcia flow: fl){
             if(!this.flowlist.contains(flow)){
                 this.flowlist.add(flow);
             }
@@ -105,7 +105,7 @@ public class Chatbot_209947366 implements Ichatbot_209947366 {
      * @return List Flow: Lista de Flows
      */
     @Override
-    public List<Flow_209947366> getflows(){
+    public List<Flow_209947366_GonzalezGarcia> getflows(){
         return this.flowlist;
     }
 
@@ -115,8 +115,8 @@ public class Chatbot_209947366 implements Ichatbot_209947366 {
      * @return Boolean
      */
     @Override
-    public boolean checkidrepeat(Flow_209947366 fl){
-        for(Flow_209947366 flowfromlist:this.flowlist){
+    public boolean checkidrepeat(Flow_209947366_GonzalezGarcia fl){
+        for(Flow_209947366_GonzalezGarcia flowfromlist:this.flowlist){
             if(fl.id==flowfromlist.id){
                 return true;
             }
@@ -129,8 +129,8 @@ public class Chatbot_209947366 implements Ichatbot_209947366 {
      * @param flowlist Lista de Flows a añadir
      */
     @Override
-    public void chatbotAddFlow(Flow_209947366... flowlist){
-        for (Flow_209947366 fl: flowlist){
+    public void chatbotAddFlow(Flow_209947366_GonzalezGarcia... flowlist){
+        for (Flow_209947366_GonzalezGarcia fl: flowlist){
             if(!this.checkidrepeat(fl)){
                 this.flowlist.add(fl);
             }
